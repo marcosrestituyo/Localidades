@@ -1,0 +1,43 @@
+﻿@model Localidades.Models.Calle
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h3>Calle</h3>
+    <hr />
+
+
+    <h4>@Html.DisplayFor(model => model.Nombre)</h4>
+
+
+</div>
+
+<div>
+    <table class="table col-4">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Locales</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var r in ViewBag.Datos)
+            {
+                <tr>
+                    <td>@r.Nombre</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

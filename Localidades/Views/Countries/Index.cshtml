@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Localidades.Models.Country>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Paises</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @Class= "badge badge-success" })
+</p>
+<table class="table">
+    <thead class="thead-dark">
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CantidadRegiones)
+        </th>
+        <th></th>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CantidadRegiones)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

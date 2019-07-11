@@ -1,0 +1,36 @@
+﻿@model Localidades.Models.Local
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <h4>Local</h4>
+    <hr />
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Calle.Nombre)</td>
+                <td>@Html.DisplayFor(model => model.Calle.Nombre)></td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Nombre)</td>
+                <td>@Html.DisplayFor(model => model.Nombre)</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Atras", "Index")
+</p>
